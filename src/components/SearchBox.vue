@@ -2045,7 +2045,7 @@ function api_query(q) {
                 var location_list = [];
                 for (const [location, area] of Object.entries(value)) {
                     if (typeof (area['location']) == 'object')
-                        location_list.push({ 'title': area['area'], 'description': area['location'].join('，') });
+                        location_list.push({ 'title': area['area'], 'description': area['location'].join('、') });
                     else
                         location_list.push({ 'title': area['area'], 'description': area['location'] });
                 };
@@ -2114,16 +2114,16 @@ get_last_time()
             </a-row>
 
             <div class="text-list">
-                <a-row justify="center" style="margin-bottom:10px">
-                    <a-typography-text strong>友情提示：为了获得最精确的消息，请选择搜索模式。</a-typography-text>
+                <a-row justify="center" style="margin-bottom:8px">
+                    <a-typography-text strong>友情提示：为了获得最精确的消息，请选择搜索模式，理论上搜索的字越少结果越准确。</a-typography-text>
                 </a-row>
-                <a-row justify="center" style="margin-bottom:10px">
-                    <a-typography-text strong>输入时不要带“省 / 市 / 县 / 区”等字词。如：湖北省襄阳市，搜索：襄阳 或 湖北</a-typography-text>
+                <a-row justify="center" style="margin-bottom:8px">
+                    <a-typography-text strong>输入时不要带“省 / 市 / 县 / 区”等字词。如：湖北省襄阳市，请搜索：襄阳 或 湖北</a-typography-text>
                 </a-row>
-                <a-row justify="center" style="margin-bottom:10px">
-                    <a-typography-text strong>不要搜索“湖北襄阳”、“湖北，襄阳”、“襄阳湖北”等！！</a-typography-text>
+                <a-row justify="center" style="margin-bottom:8px">
+                    <a-typography-text strong>不要搜索“湖北襄阳”、“湖北，襄阳”、“襄阳湖北”等！！都无法搜索到正确结果</a-typography-text>
                 </a-row>
-                <a-row justify="center" style="margin-bottom:10px">
+                <a-row justify="center" style="margin-bottom:8px">
                     <a-typography-text strong>地区信息可能不准确，正在修改中，请选择搜索模式。</a-typography-text>
                 </a-row>
                 <a-row justify="center">
@@ -2158,6 +2158,13 @@ get_last_time()
         <div class="query-result" v-if="show_result">
             <a-row justify="center">
                 <a-col :span=16>
+                    <div>
+                        <a-typography-title :level="2" align="center">其余未列出地区均为<a-typography-text type="success">常态化防控区域
+                            </a-typography-text>
+                        </a-typography-title>
+                    </div>
+
+
                     <a-card :loading="loading" title="风险区情况">
                         <div class="divider">
                             <a-typography-title :level="3" type="danger">高风险区</a-typography-title>
