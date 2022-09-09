@@ -797,8 +797,8 @@ const options = [
                 value: "咸宁",
             },
             {
-                label: "襄樊",
-                value: "襄樊",
+                label: "襄阳",
+                value: "襄阳",
             },
             {
                 label: "孝感",
