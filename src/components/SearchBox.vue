@@ -2085,6 +2085,11 @@ function search() {
     return;
 };
 
+document.addEventListener('keyup', (e) => {
+    if (e.key == 'Enter') {
+        search();
+    }
+})
 
 get_last_time()
 </script>
