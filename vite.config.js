@@ -10,7 +10,7 @@ export default defineConfig({
       resolvers: [AntDesignVueResolver()],
     }),
   ],
-  base: '/COVID-19_Risk_Area_Frontend/',
+  // base: '/COVID-19_Risk_Area_Frontend/',
   build: {
     chunkSizeWarningLimit: 1500,
     rollupOptions: {
